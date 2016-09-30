@@ -158,10 +158,11 @@ const char *FeInputSingle::mouseStrings[] =
 
 const char *FeInputSingle::joyStrings[] =
 {
-	"Up",
-	"Down",
-	"Left",
-	"Right",
+	"PovXpos",
+	"PovXneg",
+	"PovYpos",
+	"PovYneg",
+	"Button",
 	"Zpos",
 	"Zneg",
 	"Rpos",
@@ -170,11 +171,10 @@ const char *FeInputSingle::joyStrings[] =
 	"Uneg",
 	"Vpos",
 	"Vneg",
-	"PovXpos",
-	"PovXneg",
-	"PovYpos",
-	"PovYneg",
-	"Button",
+	"Right",
+	"Down",
+	"Left",
+	"Up",
 	NULL
 };
 
