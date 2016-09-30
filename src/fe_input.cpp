@@ -359,7 +359,7 @@ FeInputSingle::FeInputSingle( const std::string &str )
 		while ( joyStrings[i] != NULL )
 		{
 			if (( val.compare( 0, strlen(joyStrings[i]), joyStrings[i] ) == 0 ) &&
-				strlen(joyStrings[i] >= matchLength))
+				(strlen(joyStrings[i]) >= matchLength))
 			{
 				if ( i == JoyButton0 )
 				{
