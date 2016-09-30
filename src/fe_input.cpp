@@ -158,11 +158,10 @@ const char *FeInputSingle::mouseStrings[] =
 
 const char *FeInputSingle::joyStrings[] =
 {
-	"PovXpos",
-	"PovXneg",
-	"PovYpos",
-	"PovYneg",
-	"Button",
+	"Up",
+	"Down",
+	"Left",
+	"Right",
 	"Zpos",
 	"Zneg",
 	"Rpos",
@@ -171,10 +170,11 @@ const char *FeInputSingle::joyStrings[] =
 	"Uneg",
 	"Vpos",
 	"Vneg",
-	"Right",
-	"Down",
-	"Left",
-	"Up",
+	"PovXpos",
+	"PovXneg",
+	"PovYpos",
+	"PovYneg",
+	"Button",
 	NULL
 };
 
@@ -352,12 +352,14 @@ FeInputSingle::FeInputSingle( const std::string &str )
 	else if ( val.compare( 0, 3, "Joy" ) == 0 )
 	{
 		int num = as_int( val.substr( 3 ) );
+		int matchLength = 0;
 		m_type = (Type)(Joystick0 + num);
 
 		token_helper( str, pos, val, FE_WHITESPACE );
 		while ( joyStrings[i] != NULL )
 		{
-			if ( val.compare( 0, strlen(joyStrings[i]), joyStrings[i] ) == 0 )
+			if (( val.compare( 0, strlen(joyStrings[i]), joyStrings[i] ) == 0 ) &&
+				strlen(joyStrings[i] >= matchLength))
 			{
 				if ( i == JoyButton0 )
 				{
@@ -368,7 +370,7 @@ FeInputSingle::FeInputSingle( const std::string &str )
 				{
 					m_code = i;
 				}
-				break;
+				matchLength = strlen(joyStrings[i]);
 			}
 			i++;
 		}
