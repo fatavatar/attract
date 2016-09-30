@@ -50,10 +50,10 @@ public:
 
 	enum JoyCode
 	{
-		PovXpos, PovXneg, PovYpos, PovYneg, Button, Zpos,
-		Zneg, Rpos, Rneg, Upos, Uneg, Vpos,
-		Vneg, Right, Down, Left,
-		Up // up to sf::Joystick::ButtonCount buttons supported starting from JoyButton0
+		JoyPOVXPos, JoyPOVXNeg, JoyPOVYPos, JoyPOVYNeg, JoyButton0, JoyZPos,
+		JoyZNeg, JoyRPos, JoyRNeg, JoyUPos, JoyUNeg, JoyVPos,
+		JoyVNeg, JoyRight, JoyDown, JoyLeft,
+		JoyUp // up to sf::Joystick::ButtonCount buttons supported starting from JoyButton0
 	};
 
 	static const char *keyStrings[];
